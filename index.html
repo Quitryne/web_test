@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q-Box 1.0</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/openai"></script> -->
+  </head>
+  <body class="bg-gray-200 text-gray-700 font-sans">
+    <header class="flex justify-between px-4 py-2 bg-white shadow-md">
+      <h1 class="text-xl font-bold">Q-Box 1.0</h1>
+      <nav class="flex space-x-4">
+        <a
+          href="https://scan.erudiolabs.com/"
+          target="_blank"
+          class="text-sm hover:text-black-500"
+          >EruidoLabs OMR</a
+        >
+        <a
+          href="https://blog.naver.com/hwaspc22"
+          target="_blank"
+          class="text-sm hover:text-red-500"
+          >Quitryne's Factory</a
+        >
+        <a
+          href="https://www.youtube.com/channel/UCXKcaD6tTXRvCdDNDITVcaQ"
+          target="_blank"
+          class="text-sm hover:text-silver-500"
+          >강사퀴트린</a
+        >
+        <a
+          href="https://qfactory.liveklass.com/"
+          target="_blank"
+          class="text-sm hover:text-blue-500"
+          >Live Klass</a
+        >
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 flex flex-row">
+      <div class="w-2/3 mr-8">
+        <h2 class="text-2xl mb-12">Assistant for English Teacher</h2>
+
+        <div class="input-container mb-6">
+          <label for="inputTextArea" class="text-sm mb-2 block"
+            >Input Text</label
+          >
+          <textarea
+            id="inputTextArea"
+            class="w-full h-640 p-2 text-sm border border-gray-300 rounded"
+            rows="4"
+            placeholder="여기에 원문을 입력해 주세요"
+          ></textarea>
+        </div>
+
+        <div class="input-container flex mb-6">
+          <select
+            id="dropdownMenu"
+            class="w-1/2 p-2 text-sm border border-gray-300 rounded mr-2"
+          >
+            <option value="Break_Lines">[한줄변환]Break_Lines</option>
+            <option value="Arrangement">[단어배열]Arrangement</option>
+            <option value="Gr_Descriptive">[어법주관식]GR_Descriptive</option>
+            <option value="Gr_Selection">[어법선택]Gr_Selection</option>
+            <option value="Sequence_Each">[문장단위순서]Sequence_Each</option>
+            <option value="Insertion">[문장삽입]Insert_Sentence</option>
+            <!-- <option value="Summary">[본문요약]Summary</option> -->
+          </select>
+          <button
+            id="submitButton"
+            class="px-4 py-2 text-sm bg-red-500 text-white rounded cursor-pointer"
+          >
+            GET RESULT
+          </button>
+          <button
+            id="clearButton"
+            class="px-4 py-2 text-sm bg-gray-500 text-white rounded cursor-pointer ml-5"
+          >
+            Clear
+          </button>
+          <button
+            id="copy"
+            class="px-4 py-2 text-sm bg-blue-500 text-white rounded cursor-pointer ml-5"
+          >
+            Copy
+          </button>
+        </div>
+
+        <div class="output-container">
+          <label for="outputTextArea" class="text-sm mb-2 block"
+            >Output Text</label
+          >
+          <textarea
+            id="outputTextArea"
+            class="w-full h-96 p-2 text-sm border border-gray-300 rounded mt-4"
+            rows="10"
+            placeholder="출제유형을 선택 후, GET RESUT 버튼을 클릭하면 여기에 결과물이 나옵니다."
+            readonly
+          ></textarea>
+        </div>
+      </div>
+      <div class="w-1/3 right-panel">
+        <div
+          class="banner"
+          onclick="window.location.href='https://blog.naver.com/hwaspc22/223359854027'"
+        >
+          24개 기능 정식버전 신청
+        </div>
+        <!-- <div>
+          <br />
+          <br />
+        </div> -->
+        <div class="description">
+          <iframe
+            width="100%"
+            height="auto"
+            src="https://www.youtube.com/embed/FZS7HeF2S6U?autoplay=1"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

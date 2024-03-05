@@ -1,0 +1,89 @@
+.right-panel {
+  margin-left: 20px;
+  background-color: #f58e8e; /* 원하는 배경색 지정 */
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+label,
+button,
+option {
+  font-family: "Helvetica", sans-serif !important;
+}
+
+.banner {
+  background-color: #f5a623;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.banner:hover {
+  background-color: #d18f22;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #1c89f4;
+  color: white;
+}
+
+.main-content {
+  background-color: #f5f6f8;
+}
+
+.logo {
+  background-image: url("https://papago.naver.com/img/papago_logo.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  width: 125px;
+  height: 38px;
+}
+
+.nav-links a {
+  color: #f5f6f8;
+}
+
+.nav-links a:hover {
+  color: #0d60b5;
+}
+
+.input-text {
+  border: 2px solid #e7e8ec;
+  border-radius: 20px;
+}
+
+.input-text:focus {
+  outline: none;
+  border-color: #1c89f4;
+}
+
+.input-button {
+  background-color: #1c89f4;
+  color: white;
+  border-radius: 20px;
+}
+
+.input-button:hover {
+  background-color: #0d60b5;
+}
+
+.output-text {
+  border: 2px solid #e7e8ec;
+  border-radius: 20px;
+}
+
+.output-text:focus {
+  outline: none;
+  border-color: #1c89f4;
+}

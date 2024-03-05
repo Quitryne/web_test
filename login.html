@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome to ErudioLabs Assistant</title>
+    <link rel="stylesheet" href="css/login_style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <section class="login-form">
+      <h1>Welcome To Qbox!</h1>
+      <form>
+        <div class="int-area">
+          <input
+            type="text"
+            name="id"
+            id="signInEmail"
+            autocomplete="off"
+            required
+          />
+          <label for="id">YOUR EMAIl</label>
+        </div>
+        <div class="int-area">
+          <input
+            type="password"
+            name="pw"
+            id="signInPassword"
+            autocomplete="off"
+            required
+          />
+          <label for="pw">PASSWORD</label>
+        </div>
+        <div class="btn-area">
+          <button id="signInButton" type="submit">LOGIN</button>
+        </div>
+      </form>
+      <div class="caption">
+        <a href="">Forgot Password?</a>
+      </div>
+      <div class="blog">
+        <a href="https://blog.naver.com/hwaspc22">가입신청하기</a>
+      </div>
+      <div class="youtube">
+        <a href="https://erudiolabs.com/">How to Use?</a>
+      </div>
+      <div id="warning-message"></div>
+    </section>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyBAbjdyGb3d2RgmLllJ0qjssZHQb2k2RVg",
+        authDomain: "easylogin-8a65f.firebaseapp.com",
+        projectId: "easylogin-8a65f",
+        storageBucket: "easylogin-8a65f.appspot.com",
+        messagingSenderId: "823189090354",
+        appId: "1:823189090354:web:8030da953d9486952a8c2b",
+        measurementId: "G-8Y08VCKDP0",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+      const auth = getAuth();
+
+      document
+        .getElementById("signInButton")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          const signInEmail = document.getElementById("signInEmail").value;
+          const signInPassword =
+            document.getElementById("signInPassword").value;
+          signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+            .then((userCredential) => {
+              // Signed in
+              console.log(userCredential);
+              const user = userCredential.user;
+              alert("로그인에 성공했습니다!");
+              // Redirect to the "/assistant" page
+              window.location.href = "index.html";
+              // ...
+            })
+            .catch((error) => {
+              console.log("error");
+              const errorCode = error.code;
+              const errorMessage = error.message;
+            });
+        });
+
+      console.log(app);
+    </script>
+  </body>
+</html>
