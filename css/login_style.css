@@ -132,6 +132,12 @@ body::before {
   text-decoration: none;
 }
 
+.blog {
+  margin: 10px;
+  color: cyan;
+  text-align: center;
+}
+
 .youtube {
   margin: 10px;
   text-align: center;
