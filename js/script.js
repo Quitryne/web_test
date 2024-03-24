@@ -88,9 +88,14 @@ function Break_Lines(maintext) {
   for (let idx = 0; idx < En_lst.length; idx++) {
     const sentence = En_lst[idx];
     const circled_number = String.fromCharCode(9311 + idx + 1);
-    result += `${circled_number} ${sentence}\n\n`;
+    result += `${circled_number} ${sentence}.\n\n`;
   }
 
+  result = result
+    .replace("..", ".")
+    .replace("?.", "?")
+    .replace("!.", "!")
+    .replace('.".', '."');
   return result;
 }
 
